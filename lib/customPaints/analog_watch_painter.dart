@@ -4,13 +4,43 @@ class AnalogWatchPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     // TODO: implement paint
-    final paint = Paint()
+    final linePaint = Paint()
       ..color = Colors.green
       ..strokeWidth = 4
       ..style = PaintingStyle.fill;
 
-    canvas.drawLine(Offset(size.width / 2, size.height / 2),
-        Offset(size.width, size.height / 2), paint);
+    final circlePaint = Paint()
+      ..color = Colors.red
+      ..strokeWidth = 4
+      ..style = PaintingStyle.stroke;
+
+    final rectanglePaint = Paint()
+      ..color = Colors.blue
+      ..strokeWidth = 4
+      ..style = PaintingStyle.fill;
+
+    final squarePaint = Paint()
+      ..color = Colors.yellow
+      ..strokeWidth = 4
+      ..style = PaintingStyle.fill;
+
+    final center = Offset(3 * size.width / 4, size.height / 2);
+
+    canvas.drawCircle(center, size.width / 4, circlePaint);
+
+    canvas.drawRect(
+        Rect.fromCenter(
+            center: Offset(0, size.height / 2),
+            width: size.width / 2,
+            height: size.height / 3),
+        rectanglePaint);
+
+    canvas.drawRect(
+        Rect.fromCenter(
+            center: center, width: size.width / 3, height: size.height / 6),
+        squarePaint);
+
+    canvas.drawLine(center, Offset(size.width, size.height / 2), linePaint);
   }
 
   @override
