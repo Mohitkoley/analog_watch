@@ -26,6 +26,20 @@ class AnalogWatchPainter extends CustomPainter {
       ..style = PaintingStyle.stroke;
 
     canvas.drawPath(path, pathPaint);
+
+    final linePaint = Paint()
+      ..color = Colors.green
+      ..strokeWidth = 5
+      ..style = PaintingStyle.fill;
+
+    final rectPath = Path();
+    rectPath.moveTo(size.width / 2, (size.height / 2) - size.width / 6);
+    rectPath.lineTo(size.width / 2 + size.width / 6, size.height / 2);
+    rectPath.lineTo(size.width / 2, size.height / 2 + size.width / 6);
+    rectPath.lineTo(size.width / 2 - size.width / 6, size.height / 2);
+    rectPath.close();
+
+    canvas.drawPath(rectPath, linePaint);
   }
 
   @override
