@@ -24,6 +24,11 @@ class AnalogWatchPainter extends CustomPainter {
       ..strokeWidth = 4
       ..style = PaintingStyle.fill;
 
+    final ovalPaint = Paint()
+      ..color = Colors.orange
+      ..style = PaintingStyle.fill
+      ..strokeWidth = 4;
+
     final center = Offset(3 * size.width / 4, size.height / 2);
 
     canvas.drawCircle(center, size.width / 4, circlePaint);
@@ -39,6 +44,13 @@ class AnalogWatchPainter extends CustomPainter {
         Rect.fromCenter(
             center: center, width: size.width / 3, height: size.height / 6),
         squarePaint);
+
+    canvas.drawOval(
+        Rect.fromCenter(
+            center: Offset(size.width / 2.7, size.height / 2),
+            width: size.width / 4,
+            height: size.height / 2),
+        ovalPaint);
 
     canvas.drawLine(center, Offset(size.width, size.height / 2), linePaint);
   }
