@@ -5,12 +5,12 @@ class AnalogWatchPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     // TODO: implement paint
     final paint = Paint()
-      ..color = Colors.red
+      ..color = Colors.green
       ..strokeWidth = 4
       ..style = PaintingStyle.fill;
 
-    canvas.drawCircle(
-        Offset(size.width / 2, size.height / 2), size.width / 2, paint);
+    canvas.drawLine(Offset(size.width / 2, size.height / 2),
+        Offset(size.width, size.height / 2), paint);
   }
 
   @override
