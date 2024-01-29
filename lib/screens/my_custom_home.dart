@@ -16,8 +16,8 @@ class _MyCustomHomeScreenState extends State<MyCustomHomeScreen> {
         body: Container(
       alignment: Alignment.center,
       child: SizedBox(
-        height: context.height / 3,
-        width: context.width / 3,
+        height: context.height,
+        width: context.width,
         child: CustomPaint(
           painter: AnalogWatchPainter(),
         ),
