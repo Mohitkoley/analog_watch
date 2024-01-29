@@ -1,4 +1,5 @@
 import 'package:analog_watch/customPaints/analog_watch_painter.dart';
+import 'package:analog_watch/screens/paint_house.dart';
 import 'package:analog_watch/utils.dart';
 import 'package:flutter/material.dart';
 
@@ -15,12 +16,11 @@ class _MyCustomHomeScreenState extends State<MyCustomHomeScreen> {
     return Scaffold(
         body: Container(
       alignment: Alignment.center,
-      child: SizedBox(
-        height: context.height / 3,
-        width: context.width / 3,
-        child: CustomPaint(
-          painter: AnalogWatchPainter(),
-        ),
+      child: Container(
+        height: context.height,
+        width: context.width,
+        padding: const EdgeInsets.all(16),
+        child: PaintHouse(),
       ),
     ));
   }
