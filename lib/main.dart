@@ -1,4 +1,4 @@
-import 'package:analog_watch/screens/my_custom_home.dart';
+import 'package:analog_watch/screens/clock_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyCustomHomeScreen(),
+      home: const ClockScreen(),
     );
   }
 }
